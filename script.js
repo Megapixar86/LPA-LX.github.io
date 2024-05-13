@@ -21,8 +21,11 @@
 	}
 	//функция добавления зон
 	function addzone(){
-		//let InPut = el(id_elem).value
 		let elem = '<div><label for="power" >Введите мощность зоны:</label><input type="text" id="power" value="200" name="zone" size="2"></div>'
+		es('#power_level').insertAdjacentHTML('beforeend', elem)
+	}
+	//функция удаления зоны
+	function killzone(){
 		es('#power_level').insertAdjacentHTML('beforeend', elem)
 	}
 	//подбор оборудования
@@ -52,7 +55,7 @@
 		//el("btn").addEventListener("click", selmodel);
 		
 		//document.addEventListener("click", UpdateData)
-		el("minus").addEventListener("click", addzone);
+		el("plus").addEventListener("click", addzone);
 
 		//el("btn2").addEventListener("click", print);
 	}
