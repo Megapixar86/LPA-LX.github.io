@@ -27,18 +27,19 @@
 	<div>
 	</br>
 		<button id= "minus">-</button>
-		<input type="text" id="quantity" value="1" name="zone" size="2">
+		<input type="text" id="quantity" value="1" name="zone" size="1" readonly>
 		<button id= "plus">+</button>
 		<label for="quantity">( от 1 до 5)</label>
 
 	</br>
 	</br>
 
-		<fieldset>
+		<fieldset id = "power_field">
 		<legend>Мощность зон:</legend>
 		<div id="power_level">
-			<label for="power" >Введите мощность зоны:</label>
-			<input type="text" id="power" value="200" name="zone" size="2">
+			<label for="zone" >Введите мощность, Вт (зона 1): </label>
+			<input type="text" id="power1" value="12" name="zone" size="1">
+			<label for="zone">(от 12 до 520)</label>
 		</div>
 		</fieldset>
 	</div>
@@ -47,7 +48,7 @@
 	<fieldset>
 	<legend>Количество микрофонных вызывных станций </legend>
 	<div>
-		<input type="text" id="count" value="2" name="q" size="12">
+		<input type="text" id="panel" value="0" name="q" size="12">
 		<label for="q">(от 0 до 32)</label>
 	</div>
 	</fieldset>
