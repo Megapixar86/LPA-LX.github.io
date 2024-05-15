@@ -1,9 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.4/xlsx.core.min.js"></script>
 <script src = "script.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -23,7 +21,7 @@
 	</fieldset>
 </br>
 	<fieldset>
-	<legend>Количество зон трансляции:</legend>
+	<legend>Количество линий трансляции:</legend>
 	<div>
 	</br>
 		<button id= "minus">-</button>
@@ -35,29 +33,102 @@
 	</br>
 
 		<fieldset id = "power_field">
-		<legend>Мощность зон:</legend>
+		<legend>Мощность линий:</legend>
 		<div id="power_level">
-			<label for="zone" >Введите мощность, Вт (зона 1): </label>
+			<label for="zone" >Введите мощность, Вт (линия 1): </label>
 			<input type="text" id="power1" value="12" name="zone" size="1">
 			<label for="zone">(от 12 до 520)</label>
 		</div>
 		</fieldset>
 	</div>
+	</br>
+	<div>Суммарная мощность: <input type="text" id="total_power" size="1" readonly> Вт. <label>(макс. 540 Вт.)</label></div>
 	</fieldset>
 </br>
 	<fieldset>
 	<legend>Количество микрофонных вызывных станций </legend>
 	<div>
-		<input type="text" id="panel" value="0" name="q" size="12">
-		<label for="q">(от 0 до 32)</label>
+		<input type="text" id="panel" value="1" name="q" size="2">
+		<label for="q">(от 1 до 5)</label>
 	</div>
 	</fieldset>
 	</br>
 	<div>
-	<input id="btn" type= "button" name="btn" class="btn" value="подбор оборудования">
+	<input id="btn" type= "button" value="подбор оборудования">
 	</div>
 	</br>
+	<div id="data">
+	<div id="head">
+		<div id="grid">
+			<div id = "row">Модель</div>
+			<div id = "row">Наименование</div>
+			<div id = "row">Кол-во</div>
+			<div id = "row">Eд.</div>
+		</div>
+	</div>
+	<div id="LX240">
+		<div id="grid">
+			<div id = "row">LPA-LX240</div>
+			<div id = "row">USB, Микшер-усилитель 240 Вт/100 В, Тюнер, 2 мик-х, 3 лин-х вх., селектор 5 зон, приоритеты, контроль линий</div>
+			<div id = "row">1</div>
+			<div id = "row">шт.</div>
+		</div>
+	</div>
+	<div id="LX480">
+		<div id="grid">
+			<div id = "row">LPA-LX480</div>
+			<div id = "row">USB, Микшер-усилитель 480 Вт/100 В, Тюнер, 2 мик-х, 3 лин-х вх., селектор 5 зон, приоритеты, контроль линий</div>
+			<div id = "row">1</div>
+			<div id = "row">шт.</div>
+		</div>
+	</div>
+	<div id="LX650">
+		<div id="grid">
+			<div id = "row">LPA-LX650</div>
+			<div id = "row">USB, Микшер-усилитель 650 Вт/100 В, Тюнер, 2 мик-х, 3 лин-х вх., селектор 5 зон, приоритеты, контроль линий</div>
+			<div id = "row">1</div>
+			<div id = "row">шт.</div>
+		</div>
+	</div>
+	<div id="DT1240">
+		<div id="grid">
+			<div id = "row">Delta DT 1240</div>
+			<div id = "row">Свинцово-кислотный аккумулятор, 12В, 40Ач, габариты 198x166x170 (ДxШxВ с клеммами)</div>
+			<div id = "row">2</div>
+			<div id = "row">шт.</div>
+		</div>
+	</div>
+	<div id="DTM1255L">
+		<div id="grid">
+			<div id = "row">Delta DTM 1255 L</div>
+			<div id = "row">Свинцово-кислотный аккумулятор, 12В, 55Ач, габариты 239х132х210 (ДхШхВ с клеммами)</div>
+			<div id = "row">2</div>
+			<div id = "row">шт.</div>
+		</div>
+	</div>
+	<div id="DT1265">
+		<div id="grid">
+			<div id = "row">Delta DT 1265</div>
+			<div id = "row">Свинцово-кислотный аккумулятор, 12В, 65Ач, габариты 350х167х179 (ДхШхВ с клеммами)</div>
+			<div id = "row">2</div>
+			<div id = "row">шт.</div>
+		</div>
+	</div>
+	<div id="M1">
+		<div id="grid">
+			<div id = "row">LPA-M1</div>
+			<div id = "row">Настольная микрофонная станция с селектором зон для усилителей серии LPA-LX</div>
+			<div id = "row_q">1</div>
+			<div id = "row">шт.</div>
+		</div>
+	</div>
+	<div id="empty">
+		<div id = "row">Мощность превышает допустимую, вам не подходит ни один усилитель из серии LX. Воспользуйтесь <a href="https://support.luis.ru/e/ru/calcs/syssouer">системным калькулятором</a></div>
+	</div>
+	</div>
 	</br>
-	<div id="data"></div>
+	<input id="btn2" type= "button" value="Печать в PDF">
+	</br>
+	<input id="btn3" type= "button" value="Структурная схема">
 </body>
 </html>
